@@ -6,6 +6,8 @@ const cors = require('cors')
 require('dotenv').config();
 app.use(express.json()) 
 app.use(cors())
+const hello = require('./calc')
+
 
 //Available Routes
 app.use('/api/auth',require('./routes/auth')) 
@@ -18,3 +20,8 @@ app.use(cors())
 app.listen(port, () => {
   console.log(`Example app listening on port  http://localhost:${port}`)
 })
+let charge = async()=>{
+  let charges = await hello();
+  console.log(charges);
+
+}

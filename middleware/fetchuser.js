@@ -15,12 +15,12 @@ const fetchuser = async (req, res, next) => {
   try {
  
     const data = jwt.verify(token, JWT_SECRET);
-    console.log(data.patientUser.id)
+    // console.log(data);
     // console.log(data)
     
       // role = await Patient.findById(data.patientUser.id).select("role");
 
-        req.patient = data.patientUser.id;
+        req.patient = data;
         // req.role = role.role;
   
     
